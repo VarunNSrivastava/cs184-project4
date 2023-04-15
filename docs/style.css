@@ -1,0 +1,71 @@
+/* Define the color palette */
+:root {
+    --primary-color: #e73213; /* Complimentary color to dark blue */
+    --secondary-color: #9dbeb7;
+    --text-color: #00008B; /* White text for high contrast with dark blue */
+    --background-color: #efe6d6; /* Dark blue background color */
+}
+
+/* Apply the color palette to the body */
+body {
+    background-color: var(--background-color);
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+}
+
+/* Apply the color palette to headings */
+h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--primary-color);
+}
+
+/* Apply the color palette to keyboard input */
+kbd {
+    color: var(--text-color);
+}
+.scrolling-container {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.scrolling-table {
+    display: inline-block;
+}
+
+.scrolling-container::before,
+.scrolling-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.scrolling-container::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.scrolling-container::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.scrolling-container::-webkit-scrollbar {
+    width: 15px;
+}
+
+.scrolling-container::-webkit-scrollbar-thumb {
+    background-color: #5A5A5A;
+    border-radius: 4px;
+}
